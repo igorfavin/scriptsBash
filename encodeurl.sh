@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Lista de caracteres
-characters='!"#$%&'\''()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
+characters=$(for ((i=32;i<127;i++)) do printf "\\$(printf %03o "$i")"; done)
 
 # Função para realizar o URL encoding
 urlencode() {
